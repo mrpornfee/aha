@@ -15,7 +15,7 @@ function switchToEndWindow($driver){
  */
 function setSemaphore(string $file,int $num){
     try {
-        $file = __DIR__ . DIRECTORY_SEPARATOR . "semaphore" . DIRECTORY_SEPARATOR . $file;
+        $file =  "semaphore" . DIRECTORY_SEPARATOR . $file;
         $myfile = fopen($file, "w");
         fwrite($myfile, $num);
         fclose($myfile);
@@ -31,7 +31,7 @@ function setSemaphore(string $file,int $num){
  */
 function getSemaphore(string $file){
     try {
-        $file = __DIR__ . DIRECTORY_SEPARATOR . "semaphore" . DIRECTORY_SEPARATOR . $file;
+        $file =  "semaphore" . DIRECTORY_SEPARATOR . $file;
         $myfile = fopen($file, "r");
         $a = fread($myfile, filesize($file));
         fclose($myfile);
@@ -48,7 +48,7 @@ function getSemaphore(string $file){
  * @param string $root 数组key的根目录 以”/“结尾 需要是data 的前缀子串
  * @throws \Exception
  */
-function file_traversal_to_array($data=__DIR__."/config/",$root=__DIR__."/config/",array $dataArray=[]){
+function file_traversal_to_array($data,$root,array $dataArray=[]){
     $temp=scandir($data);
     $root_length=strlen($root);
     $dirname=$data;
@@ -65,7 +65,7 @@ function file_traversal_to_array($data=__DIR__."/config/",$root=__DIR__."/config
                 continue;
             }
             //递归遍历文件夹
-            $dataArray= \Facebook\WebDriver\file_traversal_to_array($a . "/", $root, $dataArray);
+            $dataArray= file_traversal_to_array($a . "/", $root, $dataArray);
         }
         if(pathinfo($a)["extension"]!="php"){
             continue;

@@ -4,8 +4,8 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 require_once('heart/Db.php');
 require_once('vendor/autoload.php');
-require_once('heart/funcitons.php');
-require_once('common/system.php');
+require_once('heart/function.php');
+require_once('common/function.php');
 //读取配置
 $config=file_traversal_to_array(__DIR__."/config/",__DIR__."/config/");
 //读取js区

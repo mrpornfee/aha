@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0713c61f-8de0-49ba-bb77-e17f6cff9f28" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/common/system.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/more_config/example.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heart/funcitons.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jscode/web1/jsarray.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/website.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/website.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/semaphore/sem1" beforeDir="false" afterPath="$PROJECT_DIR$/semaphore/sem1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/system.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heart/funcitons.php" beforeDir="false" afterPath="$PROJECT_DIR$/heart/function.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider.php" beforeDir="false" afterPath="$PROJECT_DIR$/spider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +12,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -117,6 +111,7 @@
       <workItem from="1593407328315" duration="967000" />
       <workItem from="1593494929396" duration="59637000" />
       <workItem from="1593750891047" duration="350000" />
+      <workItem from="1593752538924" duration="1566000" />
     </task>
     <servers />
   </component>
@@ -207,5 +202,16 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2543" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593662422645" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/heart/function.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
