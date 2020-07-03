@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0713c61f-8de0-49ba-bb77-e17f6cff9f28" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/worker/worker1/1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.php" beforeDir="false" afterPath="$PROJECT_DIR$/spider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/worker/worker1/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/worker/worker1/1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/map.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/map.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/website.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/website.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +49,14 @@
       <recent name="E:\phpstudy_pro\WWW\test\level2" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.spider.php">
+  <component name="RunManager" selected="PHP Script.cao.php">
     <configuration name="Printit.class.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Printit.class.php">
       <method v="2" />
     </configuration>
     <configuration name="StoA.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/StoA.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="cao.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/cao.php">
       <method v="2" />
     </configuration>
     <configuration name="haha.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/haha.php">
@@ -60,19 +65,16 @@
     <configuration name="sj0327.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/sj0327.php">
       <method v="2" />
     </configuration>
-    <configuration name="spider.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/spider.php">
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="PHP Script.Printit.class.php" />
       <item itemvalue="PHP Script.StoA.php" />
       <item itemvalue="PHP Script.sj0327.php" />
       <item itemvalue="PHP Script.haha.php" />
-      <item itemvalue="PHP Script.spider.php" />
+      <item itemvalue="PHP Script.cao.php" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.spider.php" />
+        <item itemvalue="PHP Script.cao.php" />
         <item itemvalue="PHP Script.haha.php" />
         <item itemvalue="PHP Script.sj0327.php" />
         <item itemvalue="PHP Script.StoA.php" />
@@ -109,7 +111,7 @@
       <workItem from="1593407328315" duration="967000" />
       <workItem from="1593494929396" duration="59637000" />
       <workItem from="1593750891047" duration="350000" />
-      <workItem from="1593752538924" duration="2941000" />
+      <workItem from="1593752538924" duration="3570000" />
     </task>
     <servers />
   </component>
