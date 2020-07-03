@@ -2,16 +2,10 @@
 namespace Facebook\WebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-require_once('heart/Db.php');
 require_once('vendor/autoload.php');
-require_once('heart/function.php');
-require_once('common/function.php');
-//读取配置
-$config=file_traversal_to_array(__DIR__."/config/",__DIR__."/config/");
-//读取js区
-$js=file_traversal_to_array(__DIR__."/jscode/web1/",__DIR__."/jscode/web1/");
 
 header("Content-Type: text/html; charset=UTF-8");
+global  $config,$js;
 $waitSeconds = $config["WEBSITE"]["wait"];  //需等待加载的时间，一般加载时间在0-15秒，如果超过15秒，报错。
 $host = $config["WEBSITE"]["host"]; // this is the default
 //这里使用的是chrome浏览器进行测试，需到http://www.seleniumhq.org/download/上下载对应的浏览器测试插件
@@ -34,7 +28,7 @@ while(1) {
                 ksort($v);
                 $v['code']=$config["MAP"]["method"](serialize($v));
                 $v['create_time']=time();
-               array_push($array_with_map,$v);
+                array_push($array_with_map,$v);
             }
         }
         //导入数据库
@@ -47,7 +41,7 @@ while(1) {
             sleep(1);
         }
         if(getSemaphore("sem1")==2)
-        $driver->executeScript($js["JSARRAY"]["js1"]);
+            $driver->executeScript($js["JSARRAY"]["js1"]);
         else if (getSemaphore("sem1")==1) continue;
         else {
             echo "爬完了~~爬完了~~".PHP_EOL;
@@ -59,10 +53,10 @@ while(1) {
     }
 //    switchToEndWindow($driver);
 // 等待新的页面加载完成....
-      $driver->wait($waitSeconds)->until(
-            WebDriverExpectedCondition::visibilityOfElementLocated(
-                WebDriverBy::id("light-pagination")
-            )
-        );
+    $driver->wait($waitSeconds)->until(
+        WebDriverExpectedCondition::visibilityOfElementLocated(
+            WebDriverBy::id("light-pagination")
+        )
+    );
     $i++;
 }
