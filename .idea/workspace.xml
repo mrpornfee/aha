@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0713c61f-8de0-49ba-bb77-e17f6cff9f28" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/map.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/website.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heart/Db.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/system.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/more_config/example.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heart/funcitons.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jscode/web1/jsarray.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cli.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/install_file/chromedriver_win32 .zip" beforeDir="false" afterPath="$PROJECT_DIR$/install_file/chromedriver_win32_具体看自己浏览器版本 .zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install_file/selenium-server-standalone-2.42.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/website.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/website.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semaphore/sem1" beforeDir="false" afterPath="$PROJECT_DIR$/semaphore/sem1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.php" beforeDir="false" afterPath="$PROJECT_DIR$/spider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +19,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7.19" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7.19">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/facebook/webdriver" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1bYwVCW5BwFFoU80Jze8XasoP14" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -107,7 +115,8 @@
       <workItem from="1591856766428" duration="3425000" />
       <workItem from="1593316470037" duration="2598000" />
       <workItem from="1593407328315" duration="967000" />
-      <workItem from="1593494929396" duration="42289000" />
+      <workItem from="1593494929396" duration="59637000" />
+      <workItem from="1593750891047" duration="350000" />
     </task>
     <servers />
   </component>
@@ -128,67 +137,75 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2628" y="341" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593592506372" />
+    <state x="2610" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593750932313">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750932313" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1591860558695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591860558695" />
     <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588925560915" />
-    <state width="1877" height="410" key="GridCell.Tab.0.bottom" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.0.bottom" timestamp="1593750211991">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036710" />
-    <state width="1877" height="410" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
-    <state width="1877" height="410" key="GridCell.Tab.0.center" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750211991" />
+    <state width="1877" height="370" key="GridCell.Tab.0.center" timestamp="1593750211991">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036710" />
-    <state width="1877" height="410" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
-    <state width="1877" height="410" key="GridCell.Tab.0.left" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750211991" />
+    <state width="1877" height="370" key="GridCell.Tab.0.left" timestamp="1593750211991">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036710" />
-    <state width="1877" height="410" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
-    <state width="1877" height="410" key="GridCell.Tab.0.right" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750211991" />
+    <state width="1877" height="370" key="GridCell.Tab.0.right" timestamp="1593750211991">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036710" />
-    <state width="1877" height="410" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
-    <state width="1877" height="410" key="GridCell.Tab.1.bottom" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750211991" />
+    <state width="1877" height="370" key="GridCell.Tab.1.bottom" timestamp="1593750214041">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="691" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036706" />
-    <state width="1877" height="410" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
-    <state width="1877" height="410" key="GridCell.Tab.1.center" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750214041" />
+    <state width="1877" height="370" key="GridCell.Tab.1.center" timestamp="1593750214041">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="691" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036706" />
-    <state width="1877" height="410" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
-    <state width="1877" height="410" key="GridCell.Tab.1.left" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750214041" />
+    <state width="1877" height="370" key="GridCell.Tab.1.left" timestamp="1593750214041">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="691" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036706" />
-    <state width="1877" height="410" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
-    <state width="1877" height="410" key="GridCell.Tab.1.right" timestamp="1593597907278">
+    <state width="1877" height="370" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750214041" />
+    <state width="1877" height="370" key="GridCell.Tab.1.right" timestamp="1593750214041">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="691" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593322036706" />
-    <state width="1877" height="410" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593597907278" />
+    <state width="1877" height="370" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593750214041" />
     <state x="2684" y="261" key="NewPhpClassDialog" timestamp="1593593779469">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2684" y="261" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593593779469" />
-    <state x="2697" y="463" key="NewPhpFileDialog" timestamp="1593593340103">
+    <state x="2697" y="463" key="NewPhpFileDialog" timestamp="1593751023860">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="463" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591857966391" />
-    <state x="2697" y="463" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593593340103" />
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2" timestamp="1593512424416">
+    <state x="2697" y="463" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593751023860" />
+    <state x="2472" y="273" key="Vcs.Push.Dialog.v2" timestamp="1593599807028">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593512424416" />
+    <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593599807028" />
     <state width="960" height="520" key="XDebugger.FullValuePopup" timestamp="1593316574056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="960" height="520" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593316574056" />
+    <state x="2543" y="225" key="search.everywhere.popup" timestamp="1593662422645">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593662422645" />
   </component>
 </project>
