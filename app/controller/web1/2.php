@@ -12,7 +12,12 @@ try {
     $driver = RemoteWebDriver::create($host, $capabilities);
     $driver->get($config["WEBSITE"]["url"]);
     $driver->findElement(WebDriverBy::id("newsTitle"))->sendKeys($config["MAP"]["string"]);
-    $driver->execute($js["2"]["js1"]);
+    $driver->executeScript($js["2"]["js1"]);
+    sleep(1);
+    while(1){
+        setSemaphore("web1/sem2",1);
+
+    }
 }catch (\Exception $e){
     echo $e->getMessage().PHP_EOL;
     exit;
