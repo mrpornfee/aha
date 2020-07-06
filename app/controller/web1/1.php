@@ -16,10 +16,10 @@ $driver->get($config["WEBSITE"]["url"]);
 $i=1;
 while(1) {
     //表示开始爬取
-    setSemaphore("sem1",1);
+    setSemaphore("web1/sem1",1);
     echo iconv("UTF-8","GB2312","title_$i")."：" . $driver->getTitle() . "\n";	//cmd.exe中文乱码，所以需转码
     try {
-        $array=$driver->executeScript($js["JSARRAY"]["js2"]);
+        $array=$driver->executeScript($js["1"]["js2"]);
         $array_with_map=[];
         //过滤不匹配信息
         foreach ($array as $k =>$v){
@@ -33,15 +33,15 @@ while(1) {
         //导入数据库
         $insertNum=insertDb($config["DATABASE"],$array_with_map);
         //表示当前页导入完成
-        setSemaphore("sem1",2);
+        setSemaphore("web1/sem1",2);
         sleep(1);
-        if($i==$config["map"]["end"]){
-            setSemaphore("sem1",3);
+        if($i==$config["MAP"]["end"]){
+            setSemaphore("web1/sem1",3);
             sleep(1);
         }
-        if(getSemaphore("sem1")==2)
-            $driver->executeScript($js["JSARRAY"]["js1"]);
-        else if (getSemaphore("sem1")==1) continue;
+        if(getSemaphore("web1/sem1")==2)
+            $driver->executeScript($js["1"]["js1"]);
+        else if (getSemaphore("web1/sem1")==1) continue;
         else {
             echo "爬完了~~爬完了~~".PHP_EOL;
             $driver->quit();
