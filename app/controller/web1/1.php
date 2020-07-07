@@ -6,12 +6,12 @@ require_once('vendor/autoload.php');
 
 header("Content-Type: text/html; charset=UTF-8");
 global  $config,$js;
-$waitSeconds = $config["WEBSITE"]["wait"];  //需等待加载的时间，一般加载时间在0-15秒，如果超过15秒，报错。
-$host = $config["WEBSITE"]["host"]; // this is the default
+$waitSeconds = $config["APP"]["wait"];  //需等待加载的时间，一般加载时间在0-15秒，如果超过15秒，报错。
+$host = $config["APP"]["host"]; // this is the default
 //这里使用的是chrome浏览器进行测试，需到http://www.seleniumhq.org/download/上下载对应的浏览器测试插件
 $capabilities = DesiredCapabilities::chrome();
 $driver = RemoteWebDriver::create($host, $capabilities);
-$driver->get($config["WEBSITE"]["url"]);
+$driver->get($config["MAP"]["url"]);
 
 $i=1;
 while(1) {
@@ -27,11 +27,14 @@ while(1) {
                 ksort($v);
                 $v['code']=$config["MAP"]["method"](serialize($v));
                 $v['create_time']=time();
+                $v["is_show"]=0;
+                $v["is_top"]=0;
+                $v["sort"]=0;
                 array_push($array_with_map,$v);
             }
         }
         //导入数据库
-        $insertNum=insertDb($config["DATABASE"],$array_with_map);
+        $insertNum=insertDb($config["DATABASE"],"fu_product_list",$array_with_map);
         //表示当前页导入完成
         setSemaphore("web1/sem1",2);
         sleep(1);

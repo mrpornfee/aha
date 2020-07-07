@@ -1,11 +1,11 @@
 <?php
 return [
+    //爬取路由
+    "url"=>"http://www.ssme.sh.gov.cn/policy/knowledge!knowledgeBase.do" ,
     //匹配字
-    "string"=>"云动惠",
+    "string"=>"上海",
     //加密方式
     "method"=>"md5",
-    //爬虫控制器
-    "spiderctl"=>"web1/2",
     //起始页,
     "start"=>1,
     //尾页
