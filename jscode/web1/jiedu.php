@@ -37,6 +37,14 @@ js
     "next_page"=><<<js
     document.querySelector("#light-pagination .page-link.next").click();
 js
+    ,
+    "战疫政策-上海应对"=><<<js
+   var list=document.querySelectorAll(".category_value .category_list >li");
+list.forEach(elem=>{
+    if(elem.dataset.value=="00110000")
+        elem.click();
+})
+js
 
 
 ];

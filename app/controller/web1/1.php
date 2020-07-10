@@ -12,7 +12,9 @@ $host = $config["APP"]["host"]; // this is the default
 $capabilities = DesiredCapabilities::chrome();
 $driver = RemoteWebDriver::create($host, $capabilities);
 $driver->get($config["MAP"]["url"]);
-
+$driver->findElement(WebDriverBy::id("search-keywords-input"))->sendKeys($config["MAP"]["string"]);
+$driver->executeScript($js["1"]["search"]);
+$page_max=$driver->executeScript($js["1"]["max_page"]);
 $i=1;
 while(1) {
     //表示开始爬取
@@ -34,18 +36,18 @@ while(1) {
             }
         }
         //导入数据库
-        $insertNum=insertDb($config["DATABASE"],"fu_product_list",$array_with_map);
+        $insertNum=insertDb($config["DATABASE"]["yundonghui"],"fa_product_list",$array_with_map);
         //表示当前页导入完成
         setSemaphore("web1/sem1",2);
         sleep(1);
-        if($i==$config["MAP"]["end"]){
+        if($i==$page_max){
             setSemaphore("web1/sem1",3);
             sleep(1);
         }
         if(getSemaphore("web1/sem1")==2)
             $driver->executeScript($js["1"]["js1"]);
         else if (getSemaphore("web1/sem1")==1) continue;
-        else {
+        else if(getSemaphore("web1/sem1")==3){
             echo "爬完了~~爬完了~~".PHP_EOL;
             $driver->quit();
             exit;

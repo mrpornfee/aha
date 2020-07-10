@@ -7,8 +7,9 @@ js
   "js2"=><<<js
 li=document.querySelectorAll("div.model_con.goods_list > ul.gl_wrap.clear > li.gl_item");
 let dateArray = [];
+var m = new Map([["公共服务",0],["专业服务",1],["公共活动",2],["专业活动",3]]);
 li.forEach(elem => {
-  let g_type = elem.querySelector("div.g_img > span.g_type").innerText == "专业服务" ? 0:1;
+  let g_type = m.get(elem.querySelector("div.g_img > span.g_type").innerText);
   let href = elem.querySelector("div.g_img > a").getAttribute('href');
   let g_pic = elem.querySelector("div.g_img > a > img").getAttribute('src')
   let g_price = elem.querySelector("div.g_price.clear > strong").innerText;
@@ -21,5 +22,20 @@ li.forEach(elem => {
   dateArray.push(obj);
 })
 return dateArray;
+js
+    ,
+    "search"=><<<js
+document.querySelector("div.search_box > a").click();    
+js
+    ,
+    "max_page"=><<<js
+var page_list=document.querySelectorAll("#light-pagination li");
+var length =page_list.length;
+if(length>3){
+        return parseInt(page_list[length-2].querySelector(".page-link").innerText);
+}else
+{
+    return 1;
+}
 js
 ];

@@ -1,7 +1,7 @@
 <?php
 return [
     //爬虫控制器(php文件)
-    "spider_ctl"=>"web1/3",
+    "spider_ctl"=>"web1/jiedu",
     //js分区(目录文件夹)
     "js_area"=>"/jscode/web1",
         //chromedriver 提供端口
