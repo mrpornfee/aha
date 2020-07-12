@@ -45,6 +45,20 @@ list.forEach(elem=>{
         elem.click();
 })
 js
-
-
+,
+    "市级-解读"=><<<js
+   var list=document.getElementById("00110000").querySelectorAll(".category_sublist > li");
+list.forEach(elem=>{
+    if(elem.dataset.value=="00110020")
+        elem.click();
+})
+js
+,
+    "区级-解读"=><<<js
+   var list=document.getElementById("00110000").querySelectorAll(".category_sublist > li");
+list.forEach(elem=>{
+    if(elem.dataset.value=="00110050")
+        elem.click();
+})
+js
 ];

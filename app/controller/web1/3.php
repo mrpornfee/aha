@@ -12,8 +12,8 @@ try {
 //这里使用的是chrome浏览器进行测试，需到http://www.seleniumhq.org/download/上下载对应的浏览器测试插件
     $capabilities = DesiredCapabilities::chrome();
     $driver = RemoteWebDriver::create($host, $capabilities);
-    $driver->get($config["MAP"]["url"]);
-    $driver->findElement(WebDriverBy::id("productName"))->sendKeys($config["MAP"]["string"]);
+    $driver->get($config["MAP"]["3"]["url"]);
+    $driver->findElement(WebDriverBy::id("productName"))->sendKeys($config["MAP"]["3"]["string"]);
     $driver->executeScript($js["3"]["search"]);
     sleep(1);
     $page_max=$driver->executeScript($js["3"]["max_page"]);
@@ -52,7 +52,7 @@ try {
             }
             if($change!=1) continue;
             ksort($v);
-            $v["code"]=$config["MAP"]["method"](serialize($v));
+            $v["code"]=$config["MAP"]["3"]["method"](serialize($v));
             $v["sort"]=0;
             $v["type"]=0;
             array_push($db_array,$v);

@@ -12,11 +12,9 @@ try {
 //这里使用的是chrome浏览器进行测试，需到http://www.seleniumhq.org/download/上下载对应的浏览器测试插件
     $capabilities = DesiredCapabilities::chrome();
     $driver = RemoteWebDriver::create($host, $capabilities);
-    $driver->get($config["MAP"]["url"]);
-    $driver->findElement(WebDriverBy::id("productName"))->sendKeys($config["MAP"]["string"]);
-    $driver->executeScript($js["JIEDU"]["search"]);
-    sleep(1);
-    $page_max=$driver->executeScript($js["JIEDU"]["max_page"]);
+    $driver->get($config["MAP"]["jiedu"]["url"]);
+  //  $driver->findElement(WebDriverBy::id("productName"))->sendKeys($config["MAP"]["jiedu"]["string"]);
+   // $driver->executeScript($js["JIEDU"]["search"]);
     //查找上海地区数组
     $db=new Db($config["DATABASE"]["yundonghui"]);
     $fid=$db->fetch("select id from fa_area where id in (select id from fa_area where pid = 0) and name = '上海'")["id"];
@@ -35,10 +33,11 @@ try {
         ]);
     }
     $i=1;
-    $change=0;
+    $page=0;
     header("Content-Type: text/html; charset=UTF-8");
-
-    $a=$driver->executeScript($js["JIEDU"]["战疫政策-上海应对"]);
+    $driver->executeScript($js["JIEDU"]["战疫政策-上海应对"]);
+    $driver->executeScript($js["JIEDU"]["市级-解读"]);
+    $page_max=$driver->executeScript($js["JIEDU"]["max_page"]);
     while(1){
         setSemaphore("web1/jiedu",1);
         echo iconv("UTF-8","GB2312","title_$i")."：" . $driver->getTitle() . "\n";	//cmd.exe中文乱码，所以需转码
@@ -55,12 +54,12 @@ try {
             }
             if($change!=1) continue;
             ksort($v);
-            $v["code"]=$config["MAP"]["method"](serialize($v));
-            $v["sort"]=0;
-            $v["type"]=0;
-            array_push($db_array,$v);
+            $v["code"]=$config["MAP"]["jiedu"]["method"](serialize($v));
+            array_push($db_array,$v["code"]);
         }
-        $insertNum=insertDb($config["DATABASE"]["yundonghui"],"fa_knowledge_list",$db_array);
+        foreach ($db_array as $k =>$v) {
+            @$db->update("fa_knowledge_list", ["type" => 1], ["code" => $v]);
+        }
         //表示当前页导入完成
         setSemaphore("web1/jiedu",2);
         sleep(1);
@@ -79,13 +78,18 @@ try {
                 )
             );
         }
-        if(getSemaphore("web1/jiedu")==3&&$change==1){
+        if(getSemaphore("web1/jiedu")==3&& $page==1){
             echo "爬完了~~爬完了~~".PHP_EOL;
             $driver->quit();
             exit;
         }
-        if(getSemaphore("web1/jiedu")==3&&$change==0){
+        if(getSemaphore("web1/jiedu")==3&& $page==0){
             //区级解读
+            $i=0;
+            $driver->executeScript($js["JIEDU"]["区级-解读"]);
+            sleep(1);
+            $page_max=$driver->executeScript($js["JIEDU"]["max_page"]);
+            $page=1;
         }
         $i++;
     }

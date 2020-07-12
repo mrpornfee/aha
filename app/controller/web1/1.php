@@ -11,8 +11,8 @@ $host = $config["APP"]["host"]; // this is the default
 //这里使用的是chrome浏览器进行测试，需到http://www.seleniumhq.org/download/上下载对应的浏览器测试插件
 $capabilities = DesiredCapabilities::chrome();
 $driver = RemoteWebDriver::create($host, $capabilities);
-$driver->get($config["MAP"]["url"]);
-$driver->findElement(WebDriverBy::id("search-keywords-input"))->sendKeys($config["MAP"]["string"]);
+$driver->get($config["MAP"]["1"]["url"]);
+$driver->findElement(WebDriverBy::id("search-keywords-input"))->sendKeys($config["MAP"]["1"]["string"]);
 $driver->executeScript($js["1"]["search"]);
 $page_max=$driver->executeScript($js["1"]["max_page"]);
 $i=1;
@@ -25,9 +25,9 @@ while(1) {
         $array_with_map=[];
         //过滤不匹配信息
         foreach ($array as $k =>$v){
-            if(strstr($v["g_title"],$config["MAP"]["string"])!==false){
+            if(strstr($v["g_title"],$config["MAP"]["1"]["string"])!==false){
                 ksort($v);
-                $v['code']=$config["MAP"]["method"](serialize($v));
+                $v['code']=$config["MAP"]["1"]["method"](serialize($v));
                 $v['create_time']=time();
                 $v["is_show"]=0;
                 $v["is_top"]=0;
