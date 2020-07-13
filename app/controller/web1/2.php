@@ -28,7 +28,7 @@ try {
             $v["sort"]=0;
             array_push($db_array,$v);
         }
-        $insertNum=insertDb($config["DATABASE"],"fu_news_list",$db_array);
+        $insertNum=insertDb($config["DATABASE"]["yundonghui"],"fu_news_list",$db_array);
         //表示当前页导入完成
         setSemaphore("web1/sem2",2);
         sleep(1);
