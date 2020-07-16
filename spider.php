@@ -10,7 +10,7 @@ $config["database"]=require "./config/database.php";
 header("Content-Type: text/html; charset=UTF-8");
 // start Firefox with 5 second timeout
 $waitSeconds = 15;  //需等待加载的时间，一般加载时间在0-15秒，如果超过15秒，报错。
-$host = 'http://localhost:9515'; // this is the default
+$host = 'http://localhost:9515/'; // this is the default
 //这里使用的是chrome浏览器进行测试，需到http://www.seleniumhq.org/download/上下载对应的浏览器测试插件
 //我这里下载的是win32 Google Chrome Driver 2.25版：https://chromedriver.storage.googleapis.com/index.html?path=2.25/
 $capabilities = DesiredCapabilities::chrome();
